@@ -72,6 +72,7 @@ public class Guests {
         System.out.println("Полные новые данные гостя: <"+guests.get(guestID)+">");
         return guests;
     }
+
     //изменение возраста гостя
     public static HashMap<Integer, List<String>> changeAge(Integer guestID, String guestAge) {
         List<String> guestInfo = new ArrayList<String>();
@@ -123,6 +124,7 @@ public class Guests {
         return booking;
     }
 
+    //выдача даты
     public static HashMap<Integer, String> giveGuestsBookingDates(HashMap<Integer, List<String>> guests, ArrayList<String> dates) {
         HashMap<Integer, String> bookingDatesForGuests = new HashMap<>();
         for (int i = 1; i <= guests.size(); i++) {
@@ -132,12 +134,11 @@ public class Guests {
         return bookingDatesForGuests;
     }
 
+    //вывод одного соответвия гость (только первый) - комната
     public static void getGuest(HashMap<Integer, List<String>> guests, HashMap<Integer, Integer> guestsInRooms, HashMap<Integer, String> bookingDatesForGuests) {
         int guest = 1;
         System.out.println("Гость " + guests.get(guest) + " забронировал комнату " + guestsInRooms.get(guest) + " на даты: " + bookingDatesForGuests.get(guest));
     }
-
-    //тут будет вывод одного соответвия гость-комната
 
 
     public static void main() {
