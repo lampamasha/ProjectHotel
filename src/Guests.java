@@ -6,7 +6,7 @@ public class Guests {
     //наша база данных для хранения гостей
     public static HashMap<Integer, List<String>> guests = new HashMap<>();
     //даты бронирования
-    public static String[] bookingDates = new String[] {"08.12.2022 - 15.12.2022", "12.12.2022 - 19.12.2022", "13.12.2022 - 20.12.2022", "14.12.2022 - 21.12.2022", "17.12.2022 - 24.12.2022"};
+    public static ArrayList<String> bookingDates = new ArrayList<>();
 
     //метод для добавления гостя в базу данных, используется в главной функции этого класса
     public void addGuest(Integer idGuest, ArrayList dataGuest) {
@@ -133,7 +133,7 @@ public class Guests {
         return bookingDatesForGuests;
     }
 
-    public static void getGuest(HashMap<Integer, List<String>> guests, HashMap<Integer, Integer> guestsInRooms, HashMap<Integer, List<String>> bookingDatesForGuests) {
+    public static void getGuest(HashMap<Integer, List<String>> guests, HashMap<Integer, Integer> guestsInRooms, HashMap<Integer, String> bookingDatesForGuests) {
         int guest = 1;
         System.out.println("Гость " + guests.get(guest) + "забронировал комнату" + guestsInRooms.get(guest) + "на даты: " + bookingDatesForGuests.get(guest));
     }
@@ -166,6 +166,12 @@ public class Guests {
         guests.addGuest(18, new ArrayList<String>(Arrays.asList("Стецюра Светлана Викторовна","48", "женщина")));
         guests.addGuest(19, new ArrayList<String>(Arrays.asList("Разумихина Галина Павловна","65", "женщина")));
         guests.addGuest(20, new ArrayList<String>(Arrays.asList("Санджиева Айса Эрдниевна","29", "женщина")));
+
+        bookingDates.add("08.12.2022 - 15.12.2022");
+        bookingDates.add("12.12.2022 - 19.12.2022");
+        bookingDates.add("13.12.2022 - 20.12.2022");
+        bookingDates.add("14.12.2022 - 21.12.2022");
+        bookingDates.add("17.12.2022 - 24.12.2022");
 
     }
 }
