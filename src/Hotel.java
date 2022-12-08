@@ -88,9 +88,9 @@ public class Hotel {
                 case (9): {
                     HashMap<Integer, Integer> guestsInRooms = new HashMap<>();
                     guestsInRooms = Guests.giveGuestsRooms(Rooms.rooms);
-                    HashMap<Integer, String[]> bookingDates = new HashMap<>();
-                    bookingDates = (HashMap<Integer, String[]>) Guests.giveGuestsBookingDates(Guests.guests, Guests.bookingDates);
-                    Guests.getGuest(Guests.guests, guestsInRooms, (HashMap<Integer, String>) bookingDates);
+                    HashMap<Integer, String> bookingDates = new HashMap<>();
+                    bookingDates = Guests.giveGuestsBookingDates(Guests.guests, Guests.bookingDates);
+                    Guests.getGuest(Guests.guests, guestsInRooms, bookingDates);
                 }
                 default:
                     System.out.println("Введенной вами команды не существует!");
