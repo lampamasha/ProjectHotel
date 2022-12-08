@@ -126,7 +126,7 @@ public class Guests {
     public static HashMap<Integer, String> giveGuestsBookingDates(HashMap<Integer, List<String>> guests, ArrayList<String> dates) {
         HashMap<Integer, String> bookingDatesForGuests = new HashMap<>();
         for (int i = 1; i <= guests.size(); i++) {
-            int date = 0;
+            int date = 1;
             bookingDatesForGuests.put(i, dates.get(date));
         }
         return bookingDatesForGuests;
@@ -134,7 +134,7 @@ public class Guests {
 
     public static void getGuest(HashMap<Integer, List<String>> guests, HashMap<Integer, Integer> guestsInRooms, HashMap<Integer, String> bookingDatesForGuests) {
         int guest = 1;
-        System.out.println("Гость " + guests.get(guest) + "забронировал комнату" + guestsInRooms.get(guest) + "на даты: " + bookingDatesForGuests.get(guest));
+        System.out.println("Гость " + guests.get(guest) + " забронировал комнату " + guestsInRooms.get(guest) + " на даты: " + bookingDatesForGuests.get(guest));
     }
 
     //тут будет вывод одного соответвия гость-комната

@@ -87,10 +87,11 @@ public class Hotel {
 
                 case (9): {
                     HashMap<Integer, Integer> guestsInRooms = new HashMap<>();
-                    guestsInRooms = Guests.giveGuestsRooms(Rooms.rooms);
+                    guestsInRooms = Guests.giveGuestsRooms(Rooms.main().rooms);
                     HashMap<Integer, String> bookingDates = new HashMap<>();
                     bookingDates = Guests.giveGuestsBookingDates(Guests.guests, Guests.bookingDates);
                     Guests.getGuest(Guests.guests, guestsInRooms, bookingDates);
+                    break;
                 }
                 default:
                     System.out.println("Введенной вами команды не существует!");
