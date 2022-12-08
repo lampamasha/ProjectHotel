@@ -5,6 +5,8 @@ public class Guests {
 
     //наша база данных для хранения гостей
     public static HashMap<Integer, List<String>> guests = new HashMap<>();
+    //даты бронирования
+    public static String[] bookingDates = new String[] {"08.12.2022 - 15.12.2022", "12.12.2022 - 19.12.2022", "13.12.2022 - 20.12.2022", "14.12.2022 - 21.12.2022", "17.12.2022 - 24.12.2022"};
 
     //метод для добавления гостя в базу данных, используется в главной функции этого класса
     public void addGuest(Integer idGuest, ArrayList dataGuest) {
@@ -119,6 +121,16 @@ public class Guests {
             roomNumbers.removeIf(element -> element.equals(roomNumbers.get(roomNumber)));
         }
         return booking;
+    }
+
+    public static HashMap<Integer, String> giveGuestsBookingDates(HashMap<Integer, List<String>> guests, ArrayList<String> dates) {
+        HashMap<Integer, String> bookingDatesForGuests = new HashMap<>();
+        Random r = new Random();
+        for (int i = 1; i <= guests.size(); i++) {
+            int date = r.nextInt(dates.size());
+            bookingDatesForGuests.put(i, dates.get(date));
+        }
+        return bookingDatesForGuests;
     }
 
     //тут будет вывод одного соответвия гость-комната
