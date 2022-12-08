@@ -16,7 +16,7 @@ public class Hotel {
             System.out.println("\n"+"Для выхода из программы нажмите 0.\n" + "Для выбора нужной команды нажмите соответствующую ей цифру:\n1 - печать списка всех комнат\n" +
                     "2 - печать списка всех гостей\n" + "3 - добавление нового гостя в базу\n" + "4 - изменить имя гостя в базе\n"+
                     "5 - изменить возраст гостя в базе\n" + "6 - изменить пол гостя в базе\n" +
-                    "7 - найти гостя по id\n" + "8 - удалить гостя по id\n");
+                    "7 - найти гостя по id\n" + "8 - удалить гостя по id\n" + "9 - вывести любого гостя\n");
             tag = in.nextInt();
 
             switch (tag){
@@ -84,10 +84,20 @@ public class Hotel {
                     Guests.deleteGuest(idGuest);
                     break;
                 }
+
+                case (9): {
+                    HashMap<Integer, Integer> guestsInRooms = new HashMap<>();
+                    guestsInRooms = Guests.giveGuestsRooms(Rooms.main().rooms);
+                    HashMap<Integer, String> bookingDates = new HashMap<>();
+                    bookingDates = Guests.giveGuestsBookingDates(Guests.guests, Guests.bookingDates);
+                    Guests.getGuest(Guests.guests, guestsInRooms, bookingDates);
+                    break;
+                }
                 default:
                     System.out.println("Введенной вами команды не существует!");
                     break;
             }
         }
     }
+
 }
