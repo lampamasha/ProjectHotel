@@ -133,6 +133,11 @@ public class Guests {
         return bookingDatesForGuests;
     }
 
+    public static void getGuest(HashMap<Integer, List<String>> guests, HashMap<Integer, Integer> guestsInRooms, HashMap<Integer, List<String>> bookingDatesForGuests) {
+        int guest = 1;
+        System.out.println("Гость " + guests.get(guest) + "забронировал комнату" + guestsInRooms.get(guest) + "на даты: " + bookingDatesForGuests.get(guest));
+    }
+
     //тут будет вывод одного соответвия гость-комната
 
 
