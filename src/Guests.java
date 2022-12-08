@@ -125,9 +125,8 @@ public class Guests {
 
     public static HashMap<Integer, String> giveGuestsBookingDates(HashMap<Integer, List<String>> guests, ArrayList<String> dates) {
         HashMap<Integer, String> bookingDatesForGuests = new HashMap<>();
-        Random r = new Random();
         for (int i = 1; i <= guests.size(); i++) {
-            int date = r.nextInt(dates.size());
+            int date = 0;
             bookingDatesForGuests.put(i, dates.get(date));
         }
         return bookingDatesForGuests;
